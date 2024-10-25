@@ -27,6 +27,7 @@ def require_bearer_token(f):
     return decorated
 
 @app.route('/parse', methods=['POST'])
+@app.route('/parse/', methods=['POST'])
 @require_bearer_token
 def parse_text():
     data = request.get_json()
